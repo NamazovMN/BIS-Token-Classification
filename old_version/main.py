@@ -1,14 +1,13 @@
 import os
-import sys
 import torch
 import torch.nn as nn
-from data_preparation import Data_Preparation
-from data_reader import Data_Reader
+from old_version.data_preparation import Data_Preparation
+from old_version.data_reader import Data_Reader
 from model import Model_Network
-from data_for_test import Data_Prepare_for_Test
+from old_version.data_for_test import Data_Prepare_for_Test
 from prep_for_model import Prepare_Data_For_Model
 from train import Training_Class
-from data_process import dataProcessing
+from old_version.data_process import dataProcessing
 
 
 dataset_path = "Dataset"
