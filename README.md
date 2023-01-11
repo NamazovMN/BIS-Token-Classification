@@ -15,4 +15,14 @@ Bidirectional Long Short Term Memory model was built along with the Fully Connec
   pip install -r requirements.txt
   ```
 * Now you are all set to run the following snippet \\
+  ```python
   python main.py --playground_only --bidirectional --experiment_number 3
+  ```
+I hope you will enjoy it. 
+
+Further details about source codes will be given soon.
+
+***Regards,***
+
+***Mahammad Namazov***
+
