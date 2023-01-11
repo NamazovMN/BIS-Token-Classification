@@ -46,10 +46,12 @@ class Playground:
                 'window_size': number of tokens that window can contain
         """
 
-        checkpoints_dir = os.path.join(parameters['experiment_environment'], 'checkpoints')
+        experiment_environment = f"train_results/experiment_{parameters['experiment_number']}"
+        checkpoints_dir = os.path.join(experiment_environment, 'checkpoints')
+
         return {
             'checkpoints_dir': checkpoints_dir,
-            'environment': parameters['experiment_environment'],
+            'environment': experiment_environment,
             'experiment_num': parameters['experiment_number'],
             'vocabulary': parameters['vocabulary'],
             'label_dict': parameters['label_dict'],

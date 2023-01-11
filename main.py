@@ -67,18 +67,19 @@ def __main__():
     config_parameters['label_dict'] = label_dict
     config_parameters['vocabulary'] = vocabulary.vocabulary
 
-    datasets = get_datasets(config_parameters, vocabulary)
     model = ClassifierModel(config_parameters).to(config_parameters['device'])
 
-    trainer = Train(config_parameters, model)
-    config_parameters['experiment_environment'] = trainer.configuration['environment']
+    if not config_parameters['playground_only']:
+        datasets = get_datasets(config_parameters, vocabulary)
+        trainer = Train(config_parameters, model)
+        config_parameters['experiment_environment'] = trainer.configuration['environment']
 
-    statistics = Statistics(config_parameters)
-    max_label = statistics.provide_statistics(before_training=True)
+        statistics = Statistics(config_parameters)
+        max_label = statistics.provide_statistics(before_training=True)
 
-    if config_parameters['train_model']:
-        trainer.train_epoch(datasets, max_label)
-    statistics.provide_statistics(before_training=False)
+        if config_parameters['train_model']:
+            trainer.train_epoch(datasets, max_label)
+        statistics.provide_statistics(before_training=False)
     player = Playground(config_parameters, model)
     player.process()
 

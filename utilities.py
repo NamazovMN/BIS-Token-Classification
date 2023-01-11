@@ -75,7 +75,8 @@ def create_parser() -> Namespace:
                         help='Specifies optimizer choice of the user that can either be SGD or Adam')
     parser.add_argument('--show_example', required=False, action='store_true', default=False,
                         help='Specifies whether example will be shown after each 10 epochs of training or not')
-
+    parser.add_argument('--playground_only', required=False, action='store_true', default=False,
+                        help='Activates only playground mode and bypasess other activities')
     return parser.parse_args()
 
 
