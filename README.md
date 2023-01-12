@@ -1,6 +1,6 @@
 # BIS Token Classification
 
-# #Goal
+## Goal
 Goal of the project is to classify characters in the provided sentences into three classes **B**, **I** and **S** for Beginning, Intermediate and Space, respectively
 
 ## Problem statement and approach
